@@ -417,6 +417,15 @@ section{position:relative;}
   font-size:14.5px;
   margin-bottom:8px;
 }
+.case-dek{
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--ink-dim);
+  font-size:17px;
+  line-height:1.5;
+  max-width:38ch;
+  margin-bottom:20px;
+}
 .case-award{
   display:inline-flex;
   align-items:center;
@@ -703,6 +712,9 @@ footer a:hover{color:var(--ink);}
 }
 .featured-item:hover .featured-thumb img{transform:scale(1.02);}
 .featured-cap{
+  display:block;
+}
+.featured-cap-row{
   display:flex;
   justify-content:space-between;
   align-items:baseline;
@@ -743,6 +755,22 @@ footer a:hover{color:var(--ink);}
   text-transform:lowercase;
   font-size:15px;
 }
+
+/* "click here to know more" — small persistent link on case-study tiles */
+.know-more-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  font-family:var(--display);
+  font-weight:700;
+  text-transform:lowercase;
+  font-size:12.5px;
+  color:var(--accent);
+}
+.know-more-link::after{content:'→';transition:transform .2s ease;}
+.work-card:hover .know-more-link::after,
+.featured-item:hover .know-more-link::after{transform:translateX(3px);}
 .view-all-work::after{content:'→';color:var(--accent);transition:transform .2s ease;}
 .view-all-work:hover::after{transform:translateX(4px);}
 
@@ -784,6 +812,25 @@ footer a:hover{color:var(--ink);}
   font-size:14.5px;
   margin-top:6px;
   display:block;
+}
+.work-explainer{
+  font-family:var(--sans);
+  color:var(--ink-dim);
+  font-size:13.5px;
+  line-height:1.5;
+  margin-top:8px;
+  max-width:42ch;
+  display:block;
+}
+
+/* Featured-tile equivalent (home page) */
+.featured-explainer{
+  font-family:var(--sans);
+  color:var(--ink-dim);
+  font-size:14px;
+  line-height:1.6;
+  margin-top:8px;
+  max-width:46ch;
 }
 
 /* ---------- About page: career note ---------- */
@@ -934,7 +981,7 @@ footer a:hover{color:var(--ink);}
   .about-grid{grid-template-columns:1fr;gap:36px;}
   .about-portrait{max-width:280px;}
   .stat-row{grid-template-columns:1fr 1fr;}
-  .featured-cap{flex-direction:column;align-items:flex-start;gap:8px;}
+  .featured-cap-row{flex-direction:column;align-items:flex-start;gap:8px;}
   .featured-outcome{text-align:left;}
   .philosophy-item{grid-template-columns:1fr;gap:8px;}
   .career-timeline-item{grid-template-columns:1fr;gap:6px;}
