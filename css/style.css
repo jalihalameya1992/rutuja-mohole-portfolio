@@ -581,14 +581,23 @@ section{position:relative;}
   border-top:1px solid var(--line-soft);
 }
 .case-footer a{
-  font-size:13.5px;
-  font-weight:600;
+  font-size:13px;
+  font-weight:700;
+  font-family:var(--display);
   text-transform:lowercase;
-  color:var(--ink-dim);
+  color:var(--ink);
   display:inline-flex;align-items:center;gap:8px;
-  transition:color .2s ease;
+  padding:12px 20px;
+  border-radius:100px;
+  border:1px solid var(--line);
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
-.case-footer a:hover{color:var(--case-accent, var(--accent));}
+.case-footer a:hover{
+  background:var(--case-accent, var(--accent));
+  border-color:var(--case-accent, var(--accent));
+  color:var(--accent-ink);
+  transform:translateY(-1px);
+}
 
 /* ---------- About ---------- */
 .about{padding:0 0 140px;}
@@ -768,27 +777,43 @@ footer a:hover{color:var(--ink);}
 .view-all-work{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   margin-top:56px;
   font-family:var(--display);
   font-weight:700;
   text-transform:lowercase;
-  font-size:15px;
+  font-size:14px;
+  padding:13px 24px;
+  border-radius:100px;
+  border:1px solid var(--ink);
+  color:var(--ink);
+  transition:background .25s ease, color .25s ease, transform .25s ease;
 }
+.view-all-work:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px);}
 
 /* "click here to know more" — small persistent link on case-study tiles */
 .know-more-link{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  margin-top:10px;
+  margin-top:14px;
   font-family:var(--display);
   font-weight:700;
   text-transform:lowercase;
-  font-size:12.5px;
-  color:var(--accent);
+  font-size:12px;
+  padding:9px 16px;
+  border-radius:100px;
+  border:1px solid var(--case-accent, var(--accent));
+  color:var(--case-accent, var(--accent));
+  transition:background .2s ease, color .2s ease, transform .2s ease;
 }
 .know-more-link::after{content:'→';transition:transform .2s ease;}
+.work-card:hover .know-more-link,
+.featured-item:hover .know-more-link{
+  background:var(--case-accent, var(--accent));
+  color:var(--accent-ink);
+  transform:translateY(-1px);
+}
 .work-card:hover .know-more-link::after,
 .featured-item:hover .know-more-link::after{transform:translateX(3px);}
 .view-all-work::after{content:'→';color:var(--accent);transition:transform .2s ease;}
