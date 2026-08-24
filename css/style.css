@@ -385,12 +385,26 @@ section{position:relative;}
   letter-spacing:0.05em;
   text-transform:uppercase;
   font-weight:700;
-  padding:5px 11px;
+  padding:5px 11px 5px 9px;
   border-radius:100px;
-  border:1px solid var(--line);
-  color:var(--ink-dim);
+  border:1px solid var(--cat-color, var(--line));
+  color:var(--cat-color, var(--ink-dim));
   white-space:nowrap;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
 }
+.category-tag::before{
+  content:'';
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--cat-color, var(--ink-faint));
+  flex-shrink:0;
+}
+/* One distinct color per discipline, so the tags read apart at a glance */
+.category-tag.cat-packaging{--cat-color:#B7791F;}
+.category-tag.cat-identity{--cat-color:#3550C9;}
+.category-tag.cat-retail{--cat-color:#1F7A5C;}
 .work-tags{display:none;}
 .work-main{display:contents;}
 
