@@ -1,6 +1,6 @@
 // Rutuja Mohole — Portfolio service worker
 // Bump this on every deploy that changes cached files, so old clients update.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const CACHE_NAME = `rm-portfolio-${CACHE_VERSION}`;
 
 // App shell: small, essential files needed to render every page's chrome.
@@ -26,6 +26,8 @@ const APP_SHELL = [
   '/work/himalaya-sheet-masks.html',
   '/work/sunfeast-marie.html',
   '/work/reliance-smart-bazaar.html',
+  '/work/petstar.html',
+  '/work/mahindra-car-bike.html',
 ];
 
 self.addEventListener('install', (event) => {
