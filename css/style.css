@@ -544,6 +544,19 @@ section{position:relative;}
 .media-item.wide{aspect-ratio: 16/9;}
 .media-item.square{aspect-ratio: 1/1;}
 .media-item.portrait{max-width:380px;margin:0 auto;}
+
+/* ---------- Case study media: one highlight + uniform grid ---------- */
+.media-grid{display:grid;gap:20px;margin-top:20px;align-items:start;}
+.media-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+.media-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+.media-grid .media-cell.span-all{grid-column:1 / -1;}
+.media-grid .media-item:not(.span-all){aspect-ratio:4/3 !important;max-width:none;margin:0;background:var(--paper-deep);}
+.media-grid .media-item:not(.span-all) img,
+.media-grid .media-item:not(.span-all) video{object-fit:contain;}
+.media-grid .media-item.span-all{max-width:none;margin:0;}
+@media (max-width:760px){
+  .media-grid.cols-2,.media-grid.cols-3{grid-template-columns:1fr;}
+}
 /* grid-break: one hero image per case study bleeds edge-to-edge, like a
    magazine spread's opening plate — true viewport-width, no gutter. */
 .media-row.breakout{
