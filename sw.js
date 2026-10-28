@@ -1,6 +1,6 @@
 // Rutuja Mohole — Portfolio service worker
 // Bump this on every deploy that changes cached files, so old clients update.
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v9';
 const CACHE_NAME = `rm-portfolio-${CACHE_VERSION}`;
 
 // App shell: small, essential files needed to render every page's chrome.
@@ -76,7 +76,7 @@ self.addEventListener('fetch', (event) => {
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetch(req).then((res) => {
-        if (res.ok) {
+        if (res.status === 200) {
           const copy = res.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
         }

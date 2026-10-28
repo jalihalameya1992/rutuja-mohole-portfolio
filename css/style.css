@@ -5,7 +5,6 @@
    saturated accent per case study. Strict grid, broken once per page.
    Minimal image chrome — the work is the hero. */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
 
 @view-transition{ navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root){
