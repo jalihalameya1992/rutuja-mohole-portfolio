@@ -1062,3 +1062,7 @@ footer a:hover{color:var(--ink);}
   .philosophy-item{grid-template-columns:1fr;gap:8px;}
   .career-timeline-item{grid-template-columns:1fr;gap:6px;}
 }
+
+/* text-only thumbnail (no imagery) */
+.thumb-text{display:flex;align-items:center;justify-content:center;background:var(--thumb-bg,var(--ink));}
+.thumb-text span{font-family:var(--display,inherit);font-weight:900;font-size:clamp(32px,6vw,72px);letter-spacing:-.02em;color:#FBF6EC;}
