@@ -317,15 +317,20 @@ section{position:relative;}
 /* ---------- Work grid (masonry) ---------- */
 .work-index{padding:88px 0 40px;}
 .work-grid{
-  column-count:2;
-  column-gap:32px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:56px 32px;
+  align-items:start;
 }
 .work-card{
   display:block;
-  break-inside:avoid;
-  margin-bottom:52px;
   cursor:pointer;
 }
+/* one highlight project spans the full row at its true ratio; the rest sit in a uniform grid */
+.work-card.highlight{grid-column:1 / -1;}
+.work-card:not(.highlight) .work-thumb{aspect-ratio:3/2 !important;}
+.work-card:not(.highlight) .work-thumb img{object-fit:contain;}
+.work-card.highlight .work-title{font-size:1.25em;}
 .work-thumb{
   position:relative;
   width:100%;
@@ -1031,7 +1036,7 @@ footer a:hover{color:var(--ink);}
   .hero-tagline-row{flex-direction:column;align-items:flex-start;gap:16px;}
   .hero-intro{text-align:left;}
   .logo-grid{grid-template-columns:repeat(3,1fr);row-gap:28px;}
-  .work-grid{column-count:1;}
+  .work-grid{grid-template-columns:1fr;gap:44px;}
   .chapter-label{font-size:clamp(30px,10vw,52px);}
   .case-head{grid-template-columns:1fr;gap:30px;}
   .case-copy{grid-template-columns:1fr;gap:34px;}
